@@ -1,0 +1,14 @@
+<div style="display: flex; justify-content: space-between;">
+    <div style="flex: 1; margin-right: 10px; overflow-y: auto; max-height: 100vh;">
+      <div *ngFor="let customer of customers">
+        <button (click)="showDetails(customer)" style="margin: 5px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">{{customer.customerId}}</button>
+      </div>
+    </div>
+    <div style="flex: 1; margin-left: 10px; padding: 15px; background-color: #f2f2f2;">
+      <div *ngIf="selectedCustomer">
+        <p style="font-weight: bold; color: #333;">Customer Name: <span style="font-weight: normal;">{{selectedCustomer.customerName}}</span></p>
+        <p style="font-weight: bold; color: #333;">Enabled: <span style="font-weight: normal;">{{selectedCustomer.enabled}}</span></p>
+        <p style="font-weight: bold; color: #333;">Map Group ID: <span style="font-weight: normal;">{{selectedCustomer.mapGroupId}}</span></p>
+      </div>
+    </div>
+  </div>
